@@ -14,25 +14,39 @@
   </head>
 
   <body>
-    <header>
-      <h1>Get you mail forwarded to the edge, cuz that's where you're living...</h1>
-    </header>
-    <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
-        <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
-        <a href="/login">Login</a>
-      {{/if}}
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Tech Blog</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/login"
+              >Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <main>
-      <aside>
-        <h2>Enjoy the blog!</h2>
-      </aside>
-      <div class="gallery">
+    <div class="container">
+      <div class="row">
         {{{body}}}
       </div>
-    </main>
+    </div>
+
     <footer>
 
     </footer>
