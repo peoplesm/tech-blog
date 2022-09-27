@@ -26,7 +26,7 @@ router.get("/:id", withAuth, async (req, res) => {
 });
 
 //create new post
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const data = await Post.create({
       title: req.body.title,
@@ -47,8 +47,8 @@ router.put("/:id", withAuth, async (req, res) => {
       {
         id: req.params.id,
         title: req.body.title,
-        date_created: req.body.dateCreated,
         content: req.body.content,
+        date_created: req.body.dateCreated,
       },
       {
         where: {

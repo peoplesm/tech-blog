@@ -1,5 +1,5 @@
-const regFormHandler = async (e) => {
-  e.preventDefault();
+const regFormHandler = async (event) => {
+  event.preventDefault();
   const username = document.querySelector("#usernameRegInput").value.trim();
   const password = document.querySelector("#passwordRegInput").value.trim();
 

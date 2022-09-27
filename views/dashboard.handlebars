@@ -1,15 +1,10 @@
 {{#if posts}}
-  <section>
-    <div>
-      {{#each posts as |post|}}
-        <button class="btn btn-primary" type="button"><a
-            href="/selected-post/{{id}}"
-          >{{title}}</a></button>
-        <br />
-      {{/each}}
-    </div>
-  </section>
+  <div>
+    {{#each posts as |post|}}
+      <div>{{title}}</div>
+    {{/each}}
+  </div>
 {{/if}}
 
 <br />
-<a href="/new-post"> Add New Post</a>
+<a href="/new-post">Add New Post</a>

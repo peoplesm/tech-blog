@@ -43,6 +43,11 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
+// new post
+router.get("/new-post", (req, res) => {
+  res.render("new-post", { loggedIn: true });
+});
+
 router.get("/dashboard", (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect("/login");
@@ -56,13 +61,7 @@ router.get("/dashboard", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: [
-          "id",
-          "comment_text",
-          "review_id",
-          "user_id",
-          "date_created",
-        ],
+        attributes: ["id", "content", "post_id", "user_id", "date_created"],
         include: {
           model: User,
           attributes: ["username"],
@@ -82,6 +81,11 @@ router.get("/dashboard", (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+//Selected post
+router.get("/selected-post/:id", (req, res) => {
+  res.render("selected-post", { loggedIn: true });
 });
 
 // Logout

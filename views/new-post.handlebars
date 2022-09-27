@@ -1,18 +1,15 @@
-<form class="newPostForm">
+<form id="newPostForm">
   <h2>Create Post</h2>
   <div>
-    <label class="form-label">Title</label>
-    <input type="input" class="form-control" id="title-input" aria-describedby="emailHelp">
-    <div class="form-text"></div>
+    <label for="titleInput">Title</label>
+    <input class="form-control" type="text" id="titleInput" />
   </div>
   <div>
-    
-    <label for="postContentInput" class="form-label">Content</label>
-    <textarea class="form-control" aria-label="With textarea" id="contentInput"></textarea>
-  </div> 
- 
-    <button class="btn btn-primary" type="submit">Create</button> 
-    
+    <label for="contentInput">Content</label>
+    <textarea class="form-control" id="contentInput"></textarea>
+  </div>
+  <div>
+    <button class="btn" type="submit">Post</button>
   </div>
 </form>
 <script src="/js/newPost.js"></script>
