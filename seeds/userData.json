@@ -1,22 +1,18 @@
 [
   {
     "username": "Diego",
-    "email": "elcoyote@pup.com",
     "password": "qwerty12!@"
   },
   {
     "username": "Otis",
-    "email": "tripod@pup.com",
     "password": "qwerty12!@"
   },
   {
     "username": "Lupa",
-    "email": "wolf@pup.com",
     "password": "qwerty12!@"
   },
   {
     "username": "Darwin",
-    "email": "devil@cat.com",
     "password": "qwerty12!@"
   }
 ]

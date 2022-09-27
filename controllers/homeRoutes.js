@@ -43,6 +43,47 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
+router.get("/dashboard", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+    return;
+  }
+  Post.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    attributes: ["id", "title", "content", "date_created"],
+    include: [
+      {
+        model: Comment,
+        attributes: [
+          "id",
+          "comment_text",
+          "review_id",
+          "user_id",
+          "date_created",
+        ],
+        include: {
+          model: User,
+          attributes: ["username"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
+  })
+    .then((data) => {
+      const posts = data.map((post) => post.get({ plain: true }));
+      res.render("dashboard", { posts, loggedIn: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // Logout
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
