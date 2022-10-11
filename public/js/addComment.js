@@ -5,7 +5,6 @@ const commentHandler = async (event) => {
   const postId = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
-  console.log(postId);
 
   if (content) {
     const response = await fetch('/api/comments', {
