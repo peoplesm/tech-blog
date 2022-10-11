@@ -1,0 +1,28 @@
+<div>
+    <p>{{post.title}} created by {{post.user.username}} on {{format_time post.date_created}}</p>
+    <p>{{post.content}}</p>
+</div>
+<section>
+    {{#each post.comments as |comment|}}
+    <div>
+        <p>{{content}}</p>
+        <p>{{user.username}} on {{format_time date_created}}</p>
+
+    </div>
+    {{/each}}
+</section>
+<br>
+<section>
+    <div>
+        <p>Add Comment</p>
+    </div>
+    <form class="form comment-form">
+        <div class="form-group">
+
+            <textarea class="form-input" type="text" id="comment-input" placeholder="Enter Comment" /></textarea>
+
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Post Comment</button>
+</section>
+<script src="/js/addComment.js"></script>

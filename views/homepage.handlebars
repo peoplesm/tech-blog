@@ -1,6 +1,8 @@
 <div>
   {{#each posts as |post|}}
+  <a href='/comment/{{id}}'>
     <div>{{post.title}}</div>
-    <div>{{post.user.username}}</div>
+  </a>
+  <div>Submitted by {{post.user.username}} on {{format_time post.date_created}}</div>
   {{/each}}
 </div>
