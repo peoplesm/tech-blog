@@ -1,0 +1,32 @@
+<section>
+  <div>
+    <p>{{post.title}} created by {{post.user.username}} on {{format_time post.date_created}}</p>
+    <p>{{review.content}}</p>
+    <button class="btn btn-danger" id='delete-post' type="button">Delete Entry</button>
+  </div>
+</section>
+<br>
+<section>
+  <div>
+    <p>Update Review</p>
+  </div>
+  <form class="form">
+    <div class="form-group">
+      <div>
+        <label for="title-input" class="form-label">Change Title</label>
+        <input class="form-input" type="text" id="title-input"></input>
+      </div>
+      <div>
+        <label for="content-input" class="form-label">Change Content</label>
+        <textarea class="form-input" type="text" id="content-input"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Update</button>
+
+    </div>
+  </form>
+</section>
+
+<script src="/js/deletePost.js"></script>
+<script src="/js/updatePost.js"></script>

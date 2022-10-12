@@ -71,6 +71,7 @@ router.get('/comment/:id', withAuth, async (req, res) => {
   }
 });
 
+//Get dashboard page
 router.get('/dashboard', withAuth, (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
@@ -106,9 +107,26 @@ router.get('/dashboard', withAuth, (req, res) => {
     });
 });
 
-//Selected post
-router.get('/selected-post/:id', (req, res) => {
-  res.render('selected-post', { loggedIn: true });
+//Edit post
+router.get('/edit-post/:id', withAuth, async (req, res) => {
+  try {
+    const editPost = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+        {
+          model: Comment,
+          include: [{ model: User, attributes: ['username'] }],
+        },
+      ],
+    });
+    const post = editPost.get({ plain: true });
+    res.render('edit-post', { post, loggedIn: true });
+  } catch (err) {
+    res.status(500).json('Error pulling up the update post page');
+  }
 });
 
 // Logout

@@ -1,9 +1,11 @@
 {{#if posts}}
-  <div>
-    {{#each posts as |post|}}
-      <div>{{title}}</div>
-    {{/each}}
-  </div>
+<div>
+  {{#each posts as |post|}}
+  <a href='/edit-post/{{id}}'>
+    <div>{{title}}</div>
+  </a>
+  {{/each}}
+</div>
 {{/if}}
 
 <br />
