@@ -1,8 +1,10 @@
-<div>
+<section>
   {{#each posts as |post|}}
-  <a href='/comment/{{id}}'>
-    <div>{{post.title}}</div>
-  </a>
-  <div>Submitted by {{post.user.username}} on {{format_time post.date_created}}</div>
+  <div class="post-cont">
+    <a href='/comment/{{id}}'>
+      <div>{{post.title}}</div>
+    </a>
+    <div>Submitted by {{post.user.username}} on {{format_time post.date_created}}</div>
+  </div>
   {{/each}}
-</div>
+</section>

@@ -1,1 +1,47 @@
-/* CARDS */
+.post-cont {
+  border: 2px solid black;
+  padding: 5px;
+  margin-top: 3px;
+}
+
+.post-cont a {
+  text-decoration: none;
+  color: darkblue;
+}
+
+.post-cont a:hover {
+  text-decoration: underline;
+  color: darkmagenta;
+}
+
+.new-post {
+  width: 35%;
+  margin: auto;
+  margin-top: 3px;
+}
+
+.title-pop {
+  color: darkblue;
+  font-size: 150%;
+}
+
+.post-title {
+  border-bottom: dashed 2px black;
+}
+
+.post-content {
+  font-size: 115%;
+}
+
+#title-input {
+  margin-left: 38px;
+}
+
+#content-input {
+  width: 75%;
+}
+
+.update-post-cont {
+  display: flex;
+  align-items: center;
+}
