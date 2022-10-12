@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { restart } = require('nodemon');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -50,7 +49,7 @@ router.get('/new-post', (req, res) => {
 });
 
 //one post for commenting
-router.get('/comment/:id', async (req, res) => {
+router.get('/comment/:id', withAuth, async (req, res) => {
   try {
     const newComment = await Post.findByPk(req.params.id, {
       include: [
@@ -72,7 +71,7 @@ router.get('/comment/:id', async (req, res) => {
   }
 });
 
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', withAuth, (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
     return;

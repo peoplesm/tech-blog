@@ -3,7 +3,7 @@ const { Comment, Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get all comments
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.findAll({
       include: [{ model: Post }],
@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 //create comment
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const data = await Comment.create({
       date_created: Date.now(),
