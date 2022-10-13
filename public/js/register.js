@@ -16,7 +16,7 @@ const regFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
     } else {
-      alert('Failed to register!');
+      alert('Failed to register, password must be at least 6 characters long!');
     }
   }
 };
