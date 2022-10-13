@@ -1,7 +1,46 @@
+/* Main styles */
+body {
+  background-color: lightslategray;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  border-bottom: solid black;
+}
+
+.container {
+  min-height: calc(100vh - 133.14px);
+}
+
+footer {
+  padding: 30px;
+  border-top: solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15px;
+  background-color: #0d6efd;
+}
+
+.btn {
+  border: black 1px solid;
+}
+
+/* Home Styles */
+
+.home-cont {
+  border: solid black 3px;
+  padding: 5px;
+  background-color: #0d6efd;
+}
+
 .post-cont {
   border: 2px solid black;
   padding: 5px;
   margin-top: 3px;
+  background-color: lightsteelblue;
 }
 
 .post-cont a {
@@ -14,6 +53,7 @@
   color: darkmagenta;
 }
 
+/* New post styles */
 .new-post {
   width: 35%;
   margin: auto;
@@ -44,4 +84,32 @@
 .update-post-cont {
   display: flex;
   align-items: center;
+}
+
+/* Login Page Styles */
+.card {
+  border: black solid 2px;
+  padding: 3px;
+  background-color: lightsteelblue;
+}
+
+.card-header {
+  background-color: #0d6efd;
+  border-bottom: black dashed 2px;
+}
+
+/* Comment page styles */
+.post-summ {
+  border-bottom: solid black 2px;
+}
+
+.comment-cont {
+  background-color: lightsteelblue;
+  border: black solid 2px;
+  padding: 3px;
+}
+
+.comment-section {
+  border-bottom: black dashed 2px;
+  padding: 3px;
 }

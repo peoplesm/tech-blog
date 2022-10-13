@@ -1,28 +1,30 @@
-<div>
-    <p>{{post.title}} created by {{post.user.username}} on {{format_time post.date_created}}</p>
-    <p>{{post.content}}</p>
-</div>
-<section>
-    {{#each post.comments as |comment|}}
-    <div>
-        <p>{{content}}</p>
-        <p>{{user.username}} on {{format_time date_created}}</p>
-
+<section class="comment-cont">
+    <div class="post-summ">
+        <h3>{{post.title}} created by {{post.user.username}} on {{format_time post.date_created}}</h3>
+        <p class="post-content">{{post.content}}</p>
     </div>
-    {{/each}}
-</section>
-<br>
-<section>
-    <div>
-        <p>Add Comment</p>
-    </div>
-    <form class="form comment-form">
-        <div class="form-group">
-
-            <textarea class="form-input" type="text" id="comment-input" placeholder="Enter Comment" /></textarea>
-
+    <section class="comment-section">
+        {{#each post.comments as |comment|}}
+        <div>
+            <p><span class="post-content">{{content}}</span>
+                <br>Commented {{user.username}} on {{format_time date_created}}
+            </p>
         </div>
-        <div class="form-group">
-            <button class="btn btn-primary" type="submit">Post Comment</button>
+        {{/each}}
+    </section>
+    <br>
+    <section>
+        <div>
+            <h4>Add Comment</h4>
+        </div>
+        <form class="form comment-form">
+            <div class="form-group">
+
+                <textarea class="form-input" type="text" id="comment-input" placeholder="Enter Comment" /></textarea>
+
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary mt-2" type="submit">Post Comment</button>
+    </section>
 </section>
 <script src="/js/addComment.js"></script>

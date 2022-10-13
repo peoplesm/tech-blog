@@ -1,7 +1,10 @@
 const deletePostHandler = async () => {
+  //get post's id
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1
   ];
+
+  //delete post from db based on id
   const response = await fetch(`/api/posts/${id}`, {
     method: 'DELETE',
     headers: { 'Content-Type': 'application/json' },
