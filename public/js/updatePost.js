@@ -17,6 +17,8 @@ const updatePostHandler = async () => {
     });
     if (response.ok) {
       document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update.');
     }
   } else if (title && !content) {
     var response = await fetch(`/api/posts/${id}`, {
@@ -26,6 +28,8 @@ const updatePostHandler = async () => {
     });
     if (response.ok) {
       document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update.');
     }
   } else if (!title && content) {
     var response = await fetch(`/api/posts/${id}`, {
@@ -35,9 +39,9 @@ const updatePostHandler = async () => {
     });
     if (response.ok) {
       document.location.replace('/dashboard');
+    } else {
+      alert('Failed to update.');
     }
-  } else {
-    alert('Failed to update.');
   }
 };
 
