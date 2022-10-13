@@ -15,21 +15,27 @@ const updatePostHandler = async () => {
       body: JSON.stringify({ title, content }),
       headers: { 'Content-Type': 'application/json' },
     });
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    }
   } else if (title && !content) {
     var response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ title }),
       headers: { 'Content-Type': 'application/json' },
     });
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    }
   } else if (!title && content) {
     var response = await fetch(`/api/posts/${id}`, {
       method: 'PUT',
       body: JSON.stringify({ content }),
       headers: { 'Content-Type': 'application/json' },
     });
-  }
-  if (response.ok) {
-    document.location.replace('/dashboard');
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    }
   } else {
     alert('Failed to update.');
   }
