@@ -16,7 +16,7 @@ const updatePostHandler = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location = '/dashboard';
     } else {
       alert('Failed to update.');
     }
@@ -27,7 +27,7 @@ const updatePostHandler = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location = '/dashboard';
     } else {
       alert('Failed to update.');
     }
@@ -38,7 +38,7 @@ const updatePostHandler = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location = '/dashboard';
     } else {
       alert('Failed to update.');
     }
